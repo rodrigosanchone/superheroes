@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="card-group">
+    <div *ngFor="let heroe of info, let i=index" class="card">
+      <img [src]="heroe.img" class="card-img-top"  alt="heroe.nombre">
+      <div class="card-body">
+        <h5 class="card-title">{{heroe.nombre}}</h5>
+        <p class="card-text">{{heroe.bio}}</p>
+        <p class="card-text"><b>casa: </b>{{heroe.casa}}</p>
+        <p class="card-text"><b>aparición: </b>{{heroe.aparicion}}</p>
+
+      </div>
+      <div class="card-footer">
+        <!--<button type="button" class="btn btn-outline-success btn-block">Ver más</button>-->
+        <a class="btn btn-outline-success btn-block" [routerLink]="['/detalle',i]">Ver Más</a>
+      </div>
+    </div>
+  </div>
+</div>

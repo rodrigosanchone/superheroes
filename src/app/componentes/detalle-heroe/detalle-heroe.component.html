@@ -1,0 +1,27 @@
+<!--Centrados-->
+<h1>Detralles de un Heroe</h1>
+<hr>
+<h2>{{heroe.nombre| uppercase}}<br><small>{{heroe.aparicion | date:'y'}}</small> </h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+        <br><br>
+        <!--mostrar imagen del heroe y en alt el nombre-->
+        <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+        <a [routerLink]="['/heroes']" class="btn btn-outline-warning btn-block" href="regresar pagina principal">Regresar</a>
+    </div>
+
+    <div class="col-md-8">
+        <h3>{{heroe.nombre}}</h3>
+        <hr>
+        <p>
+            {{heroe.bio}}
+        </p>
+        <!-- mostrar imagen representando la casa  -->
+        <img *ngIf="heroe.casa=='DC'" src="./assets/img/DC.jpg" alt="" height="160px">
+        <img *ngIf="heroe.casa=='Marvel'" src="./assets/img/MARVEL.png" alt="" height="160px">
+    </div>
+</div>
+<!--Puede agragar atributos-->
+<!--puede personalizar a su gusto si lo desea en el tiempo estipulado-->
